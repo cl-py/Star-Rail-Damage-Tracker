@@ -1,6 +1,7 @@
 import pyautogui
 import pygetwindow
 
+
 def find_window():
     for window in pygetwindow.getAllTitles():
         if "Honkai: Star Rail" in window:
@@ -12,3 +13,7 @@ def main():
 
     if honkai_window:
         print("Found Star Rail Window") #TESTING ONLY
+    else:
+        print("Instance not found.") 
+    
+main()
