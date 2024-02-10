@@ -1,8 +1,10 @@
 import tkinter as tk
+import utils
 
 class DPS_Tracker_GUI:
     def __init__(self, root):
         self.root = root
+        self.utils = utils
 
         self.root.geometry("500x400")
         self.root.title("Numby DPS Tracker")
@@ -23,7 +25,7 @@ class DPS_Tracker_GUI:
         self.dps_label.config(text="DPS: {}".format(self.current_dps))
 
         #DPS values updated every half-second.
-        self.root.after(500, self.update_dps)
+        self.root.after(500, self.utils.get_damage())
     
     def reset_dps(self):
         self.current_dps = 0
