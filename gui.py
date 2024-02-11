@@ -21,11 +21,11 @@ class DPS_Tracker_GUI:
         self.update_dps()
 
     def update_dps(self):
-        self.current_dps += 1 ##TESTING ONLY 
         self.dps_label.config(text="DPS: {}".format(self.current_dps))
 
         #DPS values updated every half-second.
-        self.root.after(500, self.utils.get_damage())
+        self.current_dps = self.root.after(500, self.utils.get_damage)
+        
     
     def reset_dps(self):
         self.current_dps = 0
